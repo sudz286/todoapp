@@ -1,0 +1,38 @@
+
+{% load static %}
+<link rel = "stylesheet" type = "text/css" href = "{% static 'tasks/css/base.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+{% if user.is_authenticated %}
+	<header>
+		<p>WELCOME {{ user.username }}</p>
+		<p><a href="{% url 'logout' %}">Log out</a></p>
+	</header>
+<div class="container">
+	{% for task in tasks %}
+		<div class="item">
+			<p>
+			{% if task.complete == True %}
+			<strike>{{task}}</strike>
+			{% else %}
+			<span>{{task}}</span>
+			{% endif %}
+			</p>
+			<a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}"><img src="{% static 'tasks/images/edit.png' %}" class="select-icon"></a>
+			<a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}"><img src="{% static 'tasks/images/delete.png' %}" class="select-icon"></a>
+		</div>
+	{% endfor %}
+</div>
+
+<form method="POST" action="/">
+	{% csrf_token %}
+	{{form.title}}
+	<input type="submit" name="Create Task">
+</form>
+
+	{% else %}
+
+	<p>You are not logged in.</p>
+	<a href="{% url 'login' %}">Log In</a>
+
+	{% endif %}
+

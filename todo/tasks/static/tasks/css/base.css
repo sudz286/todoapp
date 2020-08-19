@@ -1,0 +1,63 @@
+/*header*/
+header{
+	display: flex;
+	flex-direction: row;
+	width:90%;
+	justify-content: space-between;
+	font-size:2rem;
+	background-color: grey;
+	margin: auto;
+	color: white;
+}
+
+header a{
+	text-decoration: none;
+	color:white;
+}
+
+header a:hover{
+	text-decoration: none;
+	color:black;
+}
+/*body*/
+
+.container{
+	width: 90%;
+	font-size:100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 100%;
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+}
+
+.item{
+	border:2px black solid;
+	height:20vh;
+	width:20vw;
+	font-size:2rem;
+	margin:2% auto 2%;
+	border-radius: 25px;
+	justify-content: center;
+}
+
+.item p{
+	justify-content: center;
+	display: block;
+}
+
+img{
+	max-width: 30px;
+	height:auto;
+}
+
+form{
+	position:fixed;
+	right:0;
+	bottom:0;
+}
+
+input{
+	width:200px;
+	height: 100px;
+}

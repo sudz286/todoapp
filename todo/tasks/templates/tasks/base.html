@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TO DO APP</title>
+	
+	{% block cssfiles %}
+	{% endblock cssfiles %}
+</head>
+<body>
+	{% if user.is_authenticated %}
+	<p>Hi {{ user.username }}!</p>
+	{% block contant %}
+	{% endblock content %}
+</body>
+</html>
